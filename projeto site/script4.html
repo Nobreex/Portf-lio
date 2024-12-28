@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="stylessite4.css">
+</head>
+<body class="contato">
+
+    <!-- Barra de navegação -->
+    <nav>
+        <a href="script.html">Início</a>
+        <a href="script3.html">Introdução ao HTML e CSS</a>
+        <a href="script2.html">Sobre o Site</a>
+        <a href="script4.html">Contato</a>
+    </nav>
+
+    <!-- Rodapé superior -->
+    <footer class="footer-top">
+        <p>OBRIGADO POR CONFERIR NOSSA PÁGINA!</p>
+    </footer>
+
+    <div class="content-container">
+        <!-- Div com a mensagem de agradecimento (esquerda) -->
+        <div class="mensagem-esquerda">
+            <h2>Agradecemos sua visita!</h2>
+            <p>Estamos à disposição para ajudar iniciantes a aprenderem HTML e CSS! Se você está começando e quer entender as bases de criação e estilização de sites, pode contar conosco. Tire suas dúvidas sobre tags, estrutura de páginas, seletores e propriedades de estilo. Vamos simplificar seu aprendizado e tornar o processo mais tranquilo. Estamos aqui para ajudar você a dar os primeiros passos!</p>
+        </div>
+
+        <!-- Container para o formulário de contato (direita) -->
+        <div class="container">
+            <h1>Entre em Contato</h1>
+            <p>Fique à vontade para nos enviar uma mensagem. Estamos aqui para ajudar!</p>
+
+            <form class="form-contato" action="#" method="post">
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Seu email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem" required></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé inferior -->
+    <footer class="footer-bottom">
+        <p>&copy; Diogo Nobre Bastos </p>
+    </footer>
+
+</body>
+</html>
