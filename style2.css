@@ -87,12 +87,13 @@
   
   #hero .btn {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: 1.0rem 3rem;
     background: #fff;
     color: #333;
     border-radius: 5px;
     font-weight: bold;
     transition: background 0.3s ease, color 0.3s ease;
+    font-size: 20px;
   }
   
   #hero .btn:hover {
