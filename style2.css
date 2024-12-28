@@ -112,14 +112,14 @@
   }
   
   #projetos h2 {
-    font-size: 2rem;
+    font-size: 30px;
     margin-bottom: 1rem;
   }
   
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    
+    font-size: 25px;
     height: 67vh;
   }
   
