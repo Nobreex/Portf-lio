@@ -37,16 +37,13 @@
       <p>[Adicione uma breve descrição sobre você, suas habilidades e experiências.]</p>
       <div class="skills">
         <a href="index2.html" onclick="showloading(event)" class="skill">HTML </a>
-        <a href="index3.html" class="skill">CSS</a>
-        <a href="index4.html" class="skill">JavaScript</a>
+        <a href="index3.html" onclick="showloading(event)" class="skill">CSS</a>
+        <a href="index4.html" onclick="showloading(event)" class="skill">JavaScript</a>
         <!-- Adicione mais habilidades -->
       </div>
     </section>
 
-    <div id="loading" class="loading">
-      <div class="spinner"></div>
-      <p>Carregando...</p>
-    </div
+   
 
     <!-- Seção Projetos -->
     <section id="projetos">
@@ -78,6 +75,11 @@
     </section>
   </main>
 
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
   <footer>
     <p>© 2024 Meu Nome. Todos os direitos reservados.</p>
   </footer>
@@ -102,6 +104,30 @@
         });
       });
     });
+    
   </script>
+<script>
+  // Função para mostrar o carregamento e redirecionar
+  function showloading(event) {
+    event.preventDefault(); // Impede o comportamento padrão do link
+    
+    // Exibe a animação de carregamento
+    const loadingDiv = document.getElementById("loading");
+    loadingDiv.style.display = "flex";
+    
+    // Após 2 segundos, redireciona para a nova página
+    setTimeout(function() {
+      window.location.href = event.target.href; // Redireciona
+    }, 2000); // Espera 2 segundos para a animação de carregamento
+  }
+
+  // Adiciona o evento aos links de habilidades
+  const links = document.querySelectorAll('.skills a');
+  links.forEach(link => {
+    link.addEventListener('click', showloading);
+  });
+</script>
+
+
 </body>
 </html>

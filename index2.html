@@ -12,7 +12,7 @@
   <header>
     <nav>
       <ul class="nav-links">
-        <li><a href="index.html">Voltar</a></li>
+        <li><a href="index.html" onclick="showloading(event)">Voltar</a></li>
       </ul>
       <div class="menu-toggle">☰</div>
     </nav>
@@ -70,6 +70,11 @@
     </section>
   </main>
 
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
   <footer>
     <p>© 2024 Meu Nome. Todos os direitos reservados.</p>
   </footer>
@@ -93,6 +98,27 @@
           behavior: 'smooth'
         });
       });
+    });
+  </script>
+  <script>
+    // Função para mostrar o carregamento e redirecionar
+    function showloading(event) {
+      event.preventDefault(); // Impede o comportamento padrão do link
+      
+      // Exibe a animação de carregamento
+      const loadingDiv = document.getElementById("loading");
+      loadingDiv.style.display = "flex";
+      
+      // Após 2 segundos, redireciona para a nova página
+      setTimeout(function() {
+        window.location.href = event.target.href; // Redireciona
+      }, 2000); // Espera 2 segundos para a animação de carregamento
+    }
+  
+    // Adiciona o evento aos links de habilidades
+    const links = document.querySelectorAll('.skills a');
+    links.forEach(link => {
+      link.addEventListener('click', showloading);
     });
   </script>
 </body>
