@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio</title>
+  <link rel="stylesheet" href="style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body onload="fadeIn()">
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" onclick="showloading(event)">Voltar</a></li>
+      </ul>
+      <div class="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Seção Hero -->
+    <section id="hero"> <!--Primeria pagina-->
+      <div class="hero-content">
+        <h1>HABILIDADES EM HTML & CSS </h1>
+        <p>Clique no botão abaixo para vizualizar</p>
+        <a href="#projetos" class="btn">⭣</a>
+      </div>
+    </section>
+
+    
+
+    <!-- Seção habilidade -->
+    <section id="projetos">
+      <h2>MINHA JORNADA COM HTML E CSS</h2>
+      <br>
+      <br>
+      <div class="project-geral">
+        <div class="projeto">
+          <p>Recentemente, comecei a aprender HTML e CSS, e estou em constane desenvolvimento! Através deste projeto, pude aprender os fundamentos dessas linguagens essenciais para o desenvolvimento web.
+
+            No meu primeiro site, utilizei HTML para estruturar o conteúdo e CSS para dar estilo e formatação visual. O HTML me permitiu criar os elementos básicos, como parágrafos, títulos, links e imagens, enquanto o CSS me ajudou a personalizar a aparência do site, definindo cores, fontes, tamanhos e layout.
+            
+            A experiência de trabalhar com essas duas ferramentas me deu uma boa base e compreensão de como os sites funcionam. Aprendi a importância de organizar bem o código, usar as tags de forma adequada e tornar o layout responsivo para que o site seja visualmente agradável em diferentes dispositivos.
+
+            Embora eu esteja apenas começando, essa primeira experiência me deu confiança para continuar aprendendo e criando novos projetos!</p>
+          
+      </div>
+    
+    </section>
+
+   
+    <!-- Seção Projetos -->
+    <section id="projetos">
+      <h2>Meus Projetos</h2>
+      <div class="project-grid">
+        <div class="project">
+         <a href="projeto site/script.html"> <img src="imagem/html.jpeg" alt="Projeto 1"> </a>
+          <h3>Site sobre HTML e CSS</h3>
+          <p>Este é um site básico utilizando apenas HTML e CSS.</p> <!--Adicionar descrição-->
+        </div>
+        
+       
+      </div>
+    </section>
+       
+      </div>
+    </section>
+    
+  </main>
+
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <footer>
+    <p>© Diogo Nobre Bastos.</p>
+  </footer>
+
+  <script>
+    // Seleciona o menu-toggle e as nav-links
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Adiciona o evento de clique ao botão toggle
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Função para scroll suave ao clicar nos links do menu
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  <script>
+    // Função para mostrar o carregamento e redirecionar
+    function showloading(event) {
+      event.preventDefault(); // Impede o comportamento padrão do link
+      
+      // Exibe a animação de carregamento
+      const loadingDiv = document.getElementById("loading");
+      loadingDiv.style.display = "flex";
+      
+      // Após 2 segundos, redireciona para a nova página
+      setTimeout(function() {
+        window.location.href = event.target.href; // Redireciona
+      }, 2000); // Espera 2 segundos para a animação de carregamento
+    }
+  
+    // Adiciona o evento aos links de habilidades
+    const links = document.querySelectorAll('.skills a');
+    links.forEach(link => {
+      link.addEventListener('click', showloading);
+    });
+  </script>
+</body>
+</html>
