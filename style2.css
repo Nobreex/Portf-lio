@@ -105,21 +105,22 @@
   
   
   
-  /* habilidades */
+  /* Acesso para o site */
   #projetos {
     padding: 4rem 2rem;
     text-align: center;
   }
   
-  #projetos h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
   
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    width: auto;
+    height: auto;
+    margin-top: auto;
+    margin-left: 220px;
+    margin-right: 220px;
     
   }
   
@@ -138,7 +139,7 @@
   }
   
   .project img {
-    width: 40%;
+    width: 20%;
     height: 200px;
     object-fit: cover;
   }
@@ -148,9 +149,7 @@
     margin: 1rem 0;
   }
   
-  .project p {
-    padding: 0 1rem 1rem;
-  }
+ 
   
   /* Contato */
   #contato {
