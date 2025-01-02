@@ -111,10 +111,12 @@
   #habilidades {
     padding: 4rem 2rem;
     text-align: center;
+    font-size: 17px;
+    height: auto;
   }
   
   #habilidasdes h2 {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
   }
   
@@ -154,14 +156,14 @@
   }
 
   .project img {
-    width: 70%;
-    height: 200px;
+    width: auto;
+    height: 270px;
     object-fit: cover;
   }
   
   .project-js img {
-    width: 40%;
-    height: 200px;
+    width: auto;
+    height: 270px;
     object-fit: cover;
   }
   

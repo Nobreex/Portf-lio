@@ -13,8 +13,8 @@
     <nav>
       <div class="logo">Meu Portfólio</div>
       <ul class="nav-links">
-        <li><a href="index4.html" onclick="showloading(event)">Projetos</a></li>
-        <li><a href="index5.html" onclick="showloading(event)">Contato</a></li>
+        <li><a href="index4.html" onclick="handleRedirect(event)">Projetos</a></li>
+        <li><a href="index5.html" onclick="handleRedirect(event)">Contato</a></li>
       </ul>
       <div class="menu-toggle">☰</div>
     </nav>
@@ -34,19 +34,19 @@
     <!-- Seção HABILIDADES -->
     <section id="habilidades">
       <h2>HABILIDADES</h2>
-      <p>Abaixo está minhas habilidades nas linguagens de programação em que tenho um conhecimento báisco</p>
+      <p>Abaixo está minhas habilidades nas linguagens de programação em que tenho um conhecimento báisco:</p>
       <br>
       <br>
       <div class="project-grid">
         <div class="project" >
-          <a href="index2.html" > 
+          <a href="index2.html" onclick="handleRedirect(event)" > 
             <img src="imagem/HTML e CSS.png" alt="Projeto 1"> 
           </a>
           <h3>Habilidades em HTML e CSS</h3>
         </div>
         <div class="project-grid">
             <div class="project-js">
-             <a href="index3.html" > 
+             <a href="index3.html" onclick="handleRedirect(event)" > 
               <img src="imagem/Javascritp.png" alt="Habilidades em JavaScript">
             </a>
               <h3>Habilidades em JavaScript</h3>
@@ -94,31 +94,24 @@
       });
     });
     
-  </script>
-<script>
-  // Função para mostrar o carregamento e redirecionar
-  function showloading(event) {
+    function handleRedirect(event) {
     event.preventDefault(); // Impede o comportamento padrão do link
-    
-    // Exibe a animação de carregamento
-    const loadingDiv = document.getElementById("loading");
-    loadingDiv.style.display = "flex";
-    
-    // Após 2 segundos, redireciona para a nova página
-    setTimeout(function() {
-      window.location.href = event.target.href; // Redireciona
-    }, 2000); // Espera 2 segundos para a animação de carregamento
+
+    // Exibe a mensagem de carregamento no centro da tela
+    const loadingDiv = document.getElementById('loading');
+    loadingDiv.style.display = 'flex';
+
+    // Recupera o href do link clicado
+    const targetUrl = event.currentTarget.href;
+
+    // Redireciona após um curto intervalo (simula carregamento)
+    setTimeout(() => {
+      window.location.href = targetUrl; // Redireciona para o link clicado
+    }, 2000); // Tempo de espera (2 segundos)
   }
 
-  // Adiciona o evento aos links de habilidades
-  const links = document.querySelectorAll('.skills a');
-  links.forEach(link => {
-    link.addEventListener('click', showloading);
-  });
+  </script>
 
-
-
-</script>
 
 
 

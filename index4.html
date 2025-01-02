@@ -34,13 +34,13 @@
       <h2> PROJETOS</h2>
       <div class="project-grid">
         <div class="project">
-         <a href="projeto site/script.html"> <img src="imagem/html.jpeg" alt="Projeto 1"> </a>
+         <a href="projeto site/script.html" onclick="handleRedirect(event)"> <img src="imagem/html.jpeg" alt="Projeto 1"> </a>
           <h3>Site sobre HTML e CSS</h3>
           <p>Este é um site básico utilizando apenas HTML e CSS.</p> <!--Adicionar descrição o que o site aborda-->
         </div>
         <div class="project-grid">
             <div class="project">
-             <a href="projeto quiz/quiz.html" >  <img src="imagem/quiz.jpeg" alt="Projeto 1" > </a>
+             <a href="projeto quiz/quiz.html" onclick="handleRedirect(event)">  <img src="imagem/quiz.jpeg" alt="Projeto 1" > </a>
               <h3>QUIZ</h3>
               <p>Este é um jogo básico que tem como sua  principal característica a linguagem JavaScript .</p> <!--Adicionar descrição sobre o que o jogo aborda-->
             </div>
@@ -58,6 +58,11 @@
     <div class="spinner"></div>
     <p>Carregando...</p>
   </div>
+
+  <div id="loading-2" style="display: none;">
+    <p>Você será redirecionado para o site desejado...</p>
+  </div>
+  
 
   <footer>
     <p>© Diogo Nobre Bastos.</p>
@@ -104,6 +109,23 @@
     links.forEach(link => {
       link.addEventListener('click', showloading);
     });
+
+    
+    function handleRedirect(event) {
+    event.preventDefault(); // Impede o comportamento padrão do link
+
+    // Exibe a mensagem de carregamento no centro da tela
+    const loadingDiv = document.getElementById('loading');
+    loadingDiv.style.display = 'flex';
+
+    // Recupera o href do link clicado
+    const targetUrl = event.currentTarget.href;
+
+    // Redireciona após um curto intervalo (simula carregamento)
+    setTimeout(() => {
+      window.location.href = targetUrl; // Redireciona para o link clicado
+    }, 2000); // Tempo de espera (2 segundos)
+  }
   </script>
 </body>
 </html>
