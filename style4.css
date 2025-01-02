@@ -142,8 +142,8 @@
   }
   
   .project img {
-    width: 20%;
-    height: 200px;
+    width: auto;
+    height: 270px;
     object-fit: cover;
   }
   
